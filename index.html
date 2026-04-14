@@ -698,59 +698,8 @@
       border-color: rgba(225, 29, 72, 0.55);
     }
 
-    #success {
-      display: none;
-      text-align: center;
-      padding: 2.25rem 1.25rem 2rem;
-    }
-
-    #success .icon {
-      width: 56px;
-      height: 56px;
-      margin: 0 auto 1.1rem;
-      border-radius: 16px;
-      background: rgba(201, 162, 39, 0.12);
-      border: 1px solid rgba(201, 162, 39, 0.35);
-      display: grid;
-      place-items: center;
-    }
-
-    #success .icon svg {
-      width: 28px;
-      height: 28px;
-      color: var(--gold-dim);
-    }
-
-    #success h2 {
-      font-family: var(--font-display);
-      margin: 0 0 0.5rem;
-      font-size: 1.45rem;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-
-    #success p {
-      margin: 0 auto;
-      max-width: 32ch;
-      color: var(--ink-soft);
-      font-size: 0.95rem;
-    }
-
-    #success .urdu {
-      margin-top: 0.85rem;
-      font-size: 1rem;
-      color: var(--ink);
-      font-weight: 600;
-      opacity: 0.85;
-    }
-
     #form-block.hidden {
       display: none;
-    }
-
-    #success.visible {
-      display: block;
-      animation: rise 0.55s ease-out both;
     }
 
     @keyframes rise {
@@ -945,20 +894,12 @@
       <div class="panel-wrap">
         <div class="panel">
           <div class="panel-inner">
-            <div id="success" role="status" aria-live="polite" tabindex="-1">
-              <div class="icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
-              </div>
-              <h2>Mil gaya, thank you</h2>
-              <p>Jald WhatsApp par message karenge. Phone paas rakhna. Jaldi reply karne walon ko pehle milta hai.</p>
-              <p class="urdu">Shukriya, team rabta karegi.</p>
-            </div>
-
             <form id="lead-form" action="https://formspree.io/f/xwvapwqd" method="POST" novalidate>
               <div id="form-block">
                 <span class="panel-badge">Lead form</span>
                 <p id="form-error" class="form-error" role="alert" hidden></p>
                 <input type="hidden" name="_subject" value="Soulvia Official · new lead" />
+                <input type="hidden" name="_next" value="https://soulviabusinessopportunity.vercel.app/thank-you.html" />
                 <div class="hp-field" aria-hidden="true">
                   <label for="website">Do not fill</label>
                   <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
@@ -1089,7 +1030,6 @@
     (function () {
       var form = document.getElementById("lead-form");
       var formBlock = document.getElementById("form-block");
-      var success = document.getElementById("success");
       var submitBtn = document.getElementById("submit-btn");
       var formError = document.getElementById("form-error");
 
@@ -1206,9 +1146,8 @@
             });
           })
           .then(function () {
-            formBlock.classList.add("hidden");
-            success.classList.add("visible");
-            success.focus({ preventScroll: false });
+            var q = window.location.search || "";
+            window.location.href = "thank-you.html" + q;
           })
           .catch(function () {
             formError.textContent =

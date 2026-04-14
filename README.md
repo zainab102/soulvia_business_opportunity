@@ -26,3 +26,11 @@ Upload at minimum: `index.html`, `config.js`, and the `assets/` folder (logo).
 - Open your live URL on a phone and submit a test lead.
 - In Formspree, check **Submissions** and your inbox.
 - Optional: turn on reCAPTCHA or rules in Formspree if you get spam.
+
+## 4. Google Ads (lead form goal)
+
+After a successful submit, users land on **`thank-you.html`**. In Google Ads, use this as the conversion URL:
+
+`https://soulviabusinessopportunity.vercel.app/thank-you.html`
+
+UTM parameters from the landing page are preserved on the thank-you URL. Add your **Google tag** on both `index.html` and `thank-you.html` when you set up conversion tracking.
