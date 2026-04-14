@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Soulvia Official · Apply</title>
+  <meta name="description" content="Soulvia Official, Pakistan. Leave your WhatsApp and a few details. Our team replies and explains the next steps on a call." />
+  <link rel="icon" href="assets/soulvia-official.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/soulvia-official.png" />
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0c0c0c;
+      --ink-soft: #5c5c5c;
+      --paper: #faf9f6;
+      --paper-edge: rgba(212, 175, 55, 0.22);
+      --line: rgba(12, 12, 12, 0.1);
+      --gold: #c9a227;
+      --gold-bright: #e8c547;
+      --gold-dim: #8a7020;
+      --accent: #c9a227;
+      --accent-hover: #d4af37;
+      --error: #b42318;
+      --radius-lg: 20px;
+      --radius: 12px;
+      --font-display: "Cormorant Garamond", Georgia, serif;
+      --font: "DM Sans", system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: var(--font);
+      color: var(--ink);
+      line-height: 1.55;
+      background: var(--ink);
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: rgba(201, 162, 39, 0.2);
+      padding-left: env(safe-area-inset-left, 0);
+      padding-right: env(safe-area-inset-right, 0);
+    }
+
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(900px 700px at 80% 0%, rgba(201, 162, 39, 0.12), transparent 55%),
+        radial-gradient(700px 500px at 0% 100%, rgba(201, 162, 39, 0.07), transparent 50%),
+        #0a0a0a;
+    }
+
+    .bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+      animation: drift 22s ease-in-out infinite;
+    }
+
+    .blob-1 {
+      width: min(55vw, 420px);
+      height: min(55vw, 420px);
+      background: radial-gradient(circle, rgba(201, 162, 39, 0.2) 0%, transparent 70%);
+      top: -8%;
+      right: -12%;
+      animation-delay: -4s;
+    }
+
+    .blob-2 {
+      width: min(45vw, 340px);
+      height: min(45vw, 340px);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+      bottom: 10%;
+      left: -15%;
+      animation-delay: -10s;
+    }
+
+    @keyframes drift {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      33% {
+        transform: translate(3%, 4%) scale(1.05);
+      }
+      66% {
+        transform: translate(-2%, 2%) scale(0.98);
+      }
+    }
+
+    .shell {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-top: max(clamp(1.75rem, 4vw, 2.75rem), env(safe-area-inset-top, 0px));
+      padding-right: max(clamp(1.25rem, 3vw, 2rem), env(safe-area-inset-right, 0px));
+      padding-bottom: max(3.75rem, env(safe-area-inset-bottom, 0px));
+      padding-left: max(clamp(1.25rem, 3vw, 2rem), env(safe-area-inset-left, 0px));
+    }
+
+    .shell::before,
+    .shell::after {
+      content: "";
+      position: absolute;
+      width: min(56px, 12vw);
+      height: min(56px, 12vw);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.85;
+    }
+
+    .shell::before {
+      top: 0.75rem;
+      left: 0.75rem;
+      border-top: 1px solid rgba(201, 162, 39, 0.45);
+      border-left: 1px solid rgba(201, 162, 39, 0.45);
+    }
+
+    .shell::after {
+      bottom: 0.75rem;
+      right: 0.75rem;
+      border-bottom: 1px solid rgba(201, 162, 39, 0.45);
+      border-right: 1px solid rgba(201, 162, 39, 0.45);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: clamp(1.5rem, 4vw, 2.75rem);
+      animation: rise 0.8s ease-out both;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .blob {
+        animation: none !important;
+      }
+
+      .steps li {
+        animation: none !important;
+      }
+    }
+
+    .brand-logo-img {
+      height: 56px;
+      width: auto;
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      gap: clamp(1.75rem, 4vw, 3rem);
+      align-items: start;
+    }
+
+    @media (min-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr minmax(380px, 440px);
+        gap: 2.5rem 3rem;
+      }
+    }
+
+    .hero {
+      position: relative;
+      color: #fff;
+      animation: rise 0.85s ease-out 0.06s both;
+    }
+
+    .hero-watermark {
+      position: absolute;
+      right: clamp(-4%, 2vw, 8%);
+      top: clamp(-2rem, -5vw, 0);
+      font-family: var(--font-display);
+      font-size: clamp(7rem, 22vw, 13rem);
+      line-height: 1;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--gold);
+      opacity: 0.035;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-quote {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+      font-weight: 500;
+      color: rgba(232, 197, 71, 0.75);
+      margin: 0 0 1.25rem;
+      max-width: 28ch;
+      line-height: 1.35;
+    }
+
+    .eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: rgba(201, 162, 39, 0.85);
+      margin: 0 0 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .eyebrow::after {
+      content: "";
+      flex: 1;
+      max-width: 4rem;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(201, 162, 39, 0.5), transparent);
+    }
+
+    .steps-wrap {
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-kicker {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 4.5vw, 2.65rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: 0.01em;
+      margin: 0 0 1rem;
+      max-width: 20ch;
+      color: #f5f5f5;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-bright);
+    }
+
+    .urdu-line {
+      font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+      font-weight: 500;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0 0 1.35rem;
+      max-width: 36ch;
+    }
+
+    .urdu-line span {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.95em;
+      opacity: 0.75;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .chip {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 162, 39, 0.25);
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .steps {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      position: relative;
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.85rem 1rem;
+      align-items: start;
+      padding: 1.05rem 1.15rem;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .steps li {
+        animation: rise 0.55s ease-out both;
+      }
+
+      .steps li:nth-child(1) {
+        animation-delay: 0.04s;
+      }
+
+      .steps li:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      .steps li:nth-child(3) {
+        animation-delay: 0.16s;
+      }
+    }
+
+    .step-num {
+      position: relative;
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      background: rgba(201, 162, 39, 0.12);
+      border: 1px solid rgba(201, 162, 39, 0.4);
+      color: var(--gold-bright);
+    }
+
+    .steps li:not(:last-child) .step-num::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 0.4rem);
+      transform: translateX(-50%);
+      width: 1px;
+      height: calc(0.75rem + 1px);
+      background: linear-gradient(180deg, rgba(201, 162, 39, 0.45), rgba(201, 162, 39, 0.08));
+    }
+
+    .steps strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .steps p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.45;
+    }
+
+    .trust {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .trust svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.85;
+    }
+
+    .panel-wrap {
+      animation: rise 0.9s ease-out 0.12s both;
+    }
+
+    .panel {
+      position: relative;
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--paper-edge);
+      box-shadow:
+        0 4px 3px rgba(12, 15, 20, 0.02),
+        0 24px 50px rgba(0, 0, 0, 0.35);
+      overflow: hidden;
+    }
+
+    .panel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: repeating-linear-gradient(
+        -28deg,
+        transparent,
+        transparent 12px,
+        rgba(201, 162, 39, 0.03) 12px,
+        rgba(201, 162, 39, 0.03) 13px
+      );
+      pointer-events: none;
+      opacity: 0.7;
+    }
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(145deg, rgba(201, 162, 39, 0.45), rgba(255, 255, 255, 0.12), rgba(201, 162, 39, 0.25));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .panel-inner {
+      position: relative;
+      z-index: 1;
+      padding: clamp(1.35rem, 4vw, 1.85rem);
+    }
+
+    #form-block {
+      position: relative;
+      display: flow-root;
+    }
+
+    .panel-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      padding: 0.35rem 0.55rem;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    @media (max-width: 400px) {
+      .panel-badge {
+        position: static;
+        float: right;
+        margin: 0 0 0.65rem 0.65rem;
+      }
+    }
+
+    .panel-inner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 1.25rem;
+      right: 1.25rem;
+      height: 2px;
+      border-radius: 0 0 4px 4px;
+      background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.85), transparent);
+      pointer-events: none;
+    }
+
+    .panel-head {
+      margin-bottom: 1.25rem;
+      padding-right: 5.5rem;
+    }
+
+    @media (max-width: 400px) {
+      .panel-head {
+        padding-right: 0;
+      }
+    }
+
+    .panel-head h2 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin: 0 0 0.35rem;
+      line-height: 1.2;
+    }
+
+    .panel-head p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    fieldset {
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .field {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      color: var(--ink);
+    }
+
+    .hint {
+      font-weight: 500;
+      color: var(--ink-soft);
+      font-size: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      font: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+      transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(61, 68, 80, 0.45);
+    }
+
+    input:hover,
+    select:hover,
+    textarea:hover {
+      border-color: rgba(12, 15, 20, 0.14);
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(201, 162, 39, 0.65);
+      box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.12);
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 88px;
+      resize: vertical;
+    }
+
+    .row {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 440px) {
+      .row-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .check {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      padding: 0.4rem 0;
+      min-height: 2.75rem;
+    }
+
+    .check input {
+      margin-top: 0.35rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--gold-dim);
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    .check strong {
+      color: var(--ink);
+    }
+
+    .submit-wrap {
+      margin-top: 0.35rem;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      min-height: 3rem;
+      padding: 0.95rem 1.15rem;
+      font-family: var(--font);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: #0a0a0a;
+      background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 100%);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 10px 28px rgba(201, 162, 39, 0.28);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    button[type="submit"]:hover {
+      filter: brightness(1.06);
+      box-shadow: 0 14px 32px rgba(201, 162, 39, 0.35);
+      transform: translateY(-1px);
+    }
+
+    button[type="submit"]:active {
+      transform: translateY(0);
+    }
+
+    button[type="submit"]:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+      filter: none;
+    }
+
+    .fine-print {
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .error-msg {
+      color: var(--error);
+      font-size: 0.78rem;
+      margin-top: 0.35rem;
+      display: none;
+      font-weight: 500;
+    }
+
+    .field.invalid .error-msg {
+      display: block;
+    }
+
+    .field.invalid input,
+    .field.invalid select,
+    .field.invalid textarea {
+      border-color: rgba(225, 29, 72, 0.55);
+    }
+
+    #success {
+      display: none;
+      text-align: center;
+      padding: 2.25rem 1.25rem 2rem;
+    }
+
+    #success .icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 1.1rem;
+      border-radius: 16px;
+      background: rgba(201, 162, 39, 0.12);
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      display: grid;
+      place-items: center;
+    }
+
+    #success .icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--gold-dim);
+    }
+
+    #success h2 {
+      font-family: var(--font-display);
+      margin: 0 0 0.5rem;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    #success p {
+      margin: 0 auto;
+      max-width: 32ch;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    #success .urdu {
+      margin-top: 0.85rem;
+      font-size: 1rem;
+      color: var(--ink);
+      font-weight: 600;
+      opacity: 0.85;
+    }
+
+    #form-block.hidden {
+      display: none;
+    }
+
+    #success.visible {
+      display: block;
+      animation: rise 0.55s ease-out both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ig-footer {
+      margin-top: 2.75rem;
+      padding-top: 1.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      animation: rise 0.95s ease-out 0.18s both;
+    }
+
+    .ig-footer h2 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin: 0 0 0.35rem;
+    }
+
+    .ig-footer > p {
+      margin: 0 0 1.1rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.55);
+      max-width: 40ch;
+      line-height: 1.45;
+    }
+
+    .ig-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .ig-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-height: 2.75rem;
+      padding: 0.55rem 0.95rem 0.55rem 0.75rem;
+      border-radius: 999px;
+      touch-action: manipulation;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.93);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: background 0.18s, border-color 0.18s, transform 0.12s ease;
+    }
+
+    .ig-links a:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .ig-links a:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .ig-links svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    .ig-links .ig-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.05rem;
+      line-height: 1.2;
+    }
+
+    .ig-links .ig-handle {
+      font-size: 0.72rem;
+      font-weight: 500;
+      opacity: 0.65;
+    }
+
+    .form-error {
+      display: block;
+      margin-bottom: 1rem;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #7f1d1d;
+      background: rgba(180, 35, 24, 0.08);
+      border: 1px solid rgba(180, 35, 24, 0.25);
+      border-radius: 10px;
+    }
+
+    .form-error[hidden] {
+      display: none;
+    }
+
+    .hp-field {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Soulvia Official">
+        <img class="brand-logo-img" src="assets/soulvia-official.png" alt="Soulvia Official" width="600" height="600" decoding="async" />
+      </a>
+    </header>
+
+    <main class="grid">
+      <section class="hero" aria-labelledby="hero-title">
+        <span class="hero-watermark" aria-hidden="true">∞</span>
+        <p class="hero-kicker">Pakistan, side income / online work</p>
+        <h1 id="hero-title">Form bhar dein, <em>baaki hum explain</em> kar denge call par.</h1>
+        <p class="urdu-line">
+          Student ho, ghar par ho, ya job kartay ho. Agar apne time ke hisaab se kuch extra karna chahte ho, bas details chhor do.
+          <span>Koi fixed income ka waada nahi. Pehle baat, phir aap decide karte ho.</span>
+        </p>
+
+        <p class="hero-quote">Thoda time nikalna, seedhi baat sunna, phir khud decide karna.</p>
+
+        <div class="chips" role="list">
+          <span class="chip" role="listitem">Raat ya weekend, dono chal sakte hain</span>
+          <span class="chip" role="listitem">Reply WhatsApp par</span>
+          <span class="chip" role="listitem">Team member guide karta hai start se</span>
+        </div>
+
+        <div class="steps-wrap">
+          <p class="eyebrow">Teen steps</p>
+          <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div>
+              <strong>Form bhar dein</strong>
+              <p>Yahi page par details likh kar bhej dein.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div>
+              <strong>Call ya WhatsApp par rabta</strong>
+              <p>Team aap tak phone call ya WhatsApp message se pohonchti hai.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div>
+              <strong>Training</strong>
+              <p>Us ke baad training se agla hissa shuru hota hai.</p>
+            </div>
+          </li>
+        </ol>
+        </div>
+
+        <div class="trust">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Spam nahi, sirf kaam ki baat
+          </span>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Number sirf team tak rehta hai
+          </span>
+        </div>
+      </section>
+
+      <div class="panel-wrap">
+        <div class="panel">
+          <div class="panel-inner">
+            <div id="success" role="status" aria-live="polite" tabindex="-1">
+              <div class="icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <h2>Mil gaya, thank you</h2>
+              <p>Jald WhatsApp par message karenge. Phone paas rakhna. Jaldi reply karne walon ko pehle milta hai.</p>
+              <p class="urdu">Shukriya, team rabta karegi.</p>
+            </div>
+
+            <form id="lead-form" action="https://formspree.io/f/xwvapwqd" method="POST" novalidate>
+              <div id="form-block">
+                <span class="panel-badge">Lead form</span>
+                <p id="form-error" class="form-error" role="alert" hidden></p>
+                <input type="hidden" name="_subject" value="Soulvia Official · new lead" />
+                <div class="hp-field" aria-hidden="true">
+                  <label for="website">Do not fill</label>
+                  <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
+                <div class="panel-head">
+                  <h2>Apni details likh dein</h2>
+                  <p>Jo likhoge wahi padh kar team call pe baat karegi. Form bharne se koi lock-in nahi.</p>
+                </div>
+
+                <fieldset>
+                  <div class="field" data-field="fullName">
+                    <label for="fullName">Full name</label>
+                    <input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="120" placeholder="Jaisa CNIC / official ID par ho" />
+                    <p class="error-msg">Please enter your full name.</p>
+                  </div>
+
+                  <div class="row row-2">
+                    <div class="field" data-field="whatsapp">
+                      <label for="whatsapp">WhatsApp <span class="hint">(country code ke sath)</span></label>
+                      <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="923001234567" />
+                      <p class="error-msg">Valid WhatsApp number enter karein.</p>
+                    </div>
+                    <div class="field" data-field="city">
+                      <label for="city">City</label>
+                      <input id="city" name="city" type="text" required maxlength="80" placeholder="Karachi, Lahore, Islamabad…" />
+                      <p class="error-msg">City zaroor likhein.</p>
+                    </div>
+                  </div>
+
+                  <div class="field" data-field="email">
+                    <label for="email">Email <span class="hint">(optional)</span></label>
+                    <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="agar use kartay hon" />
+                    <p class="error-msg">Valid email ya khali chhor dein.</p>
+                  </div>
+
+                  <div class="row row-2">
+                    <div class="field" data-field="profile">
+                      <label for="profile">Mainly aap…</label>
+                      <select id="profile" name="profile" required>
+                        <option value="" disabled selected>Choose karein</option>
+                        <option value="student">Student</option>
+                        <option value="homemaker">Homemaker</option>
+                        <option value="employed">Employed / corporate</option>
+                        <option value="freelancer">Freelancer</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <p class="error-msg">Ek option select karein.</p>
+                    </div>
+                    <div class="field" data-field="hours">
+                      <label for="hours">Weekly hours <span class="hint">(realistic)</span></label>
+                      <select id="hours" name="hours" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="under-5">5 se kam</option>
+                        <option value="5-10">5–10</option>
+                        <option value="10-20">10–20</option>
+                        <option value="20-plus">20+</option>
+                      </select>
+                      <p class="error-msg">Hours batayein.</p>
+                    </div>
+                  </div>
+
+                  <div class="field" data-field="goal">
+                    <label for="goal">Aap kya chahte hain? <span class="hint">(1 ya 2 lines)</span></label>
+                    <textarea id="goal" name="goal" maxlength="500" placeholder="Maslan: studies ke sath extra, flexible hours, naye skills…"></textarea>
+                    <p class="error-msg">500 characters max.</p>
+                  </div>
+
+                  <div class="field" data-field="consent">
+                    <label class="check">
+                      <input id="consent" name="consent" type="checkbox" value="yes" required />
+                      <span><strong>Main agree karti/karta hoon</strong> ke team mujhe call / WhatsApp par is application ke baray mein rabta kar sakti hai. Samajhta/samajhti hoon ke natayej effort par depend karte hain aur koi guarantee nahi di jaati.</span>
+                    </label>
+                    <p class="error-msg">Aage barhne ke liye tick karein.</p>
+                  </div>
+                </fieldset>
+
+                <div class="submit-wrap">
+                  <button type="submit" id="submit-btn">Bhej dein, WhatsApp par milte hain</button>
+                </div>
+
+                <p class="fine-print">
+                  Form Formspree se aap ki email par bhejta hai. Ads chalate waqt fixed kamai ke claims se bacho. Formspree ki privacy policy un ki site par hai.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="ig-footer" aria-labelledby="ig-heading">
+      <h2 id="ig-heading">Instagram</h2>
+      <p>Agar pehle dekhna ho to yahan se follow kar lo. Phir wapas aa kar form bhar dena.</p>
+      <ul class="ig-links">
+        <li>
+          <a href="https://www.instagram.com/abdullah_juttofficial/" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span class="ig-meta">
+              <span>Abdullah Jutt</span>
+              <span class="ig-handle">@abdullah_juttofficial, founder</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/soulvia_networks/" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span class="ig-meta">
+              <span>Soulvia Network</span>
+              <span class="ig-handle">@soulvia_networks</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/soulviaofficial_/" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span class="ig-meta">
+              <span>Soulvia Official</span>
+              <span class="ig-handle">@soulviaofficial_</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </footer>
+  </div>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("lead-form");
+      var formBlock = document.getElementById("form-block");
+      var success = document.getElementById("success");
+      var submitBtn = document.getElementById("submit-btn");
+      var formError = document.getElementById("form-error");
+
+      var fid = typeof window.SOULVIA_FORMSPREE_ID === "string" ? window.SOULVIA_FORMSPREE_ID.trim() : "";
+      var endpoint =
+        fid && fid !== "YOUR_FORMSPREE_ID" ? "https://formspree.io/f/" + fid : "";
+
+      function digitsOnly(s) {
+        return String(s || "").replace(/\D/g, "");
+      }
+
+      function validPkWhatsApp(digits) {
+        if (digits.length < 10 || digits.length > 15) return false;
+        if (digits.startsWith("92")) return digits.length >= 12;
+        if (digits.startsWith("0")) return digits.length >= 11;
+        return digits.length >= 10;
+      }
+
+      function clearInvalid() {
+        form.querySelectorAll(".field.invalid").forEach(function (el) {
+          el.classList.remove("invalid");
+        });
+      }
+
+      function setInvalid(fieldName) {
+        var f = form.querySelector('[data-field="' + fieldName + '"]');
+        if (f) f.classList.add("invalid");
+      }
+
+      function validate() {
+        clearInvalid();
+        var ok = true;
+        var fullName = document.getElementById("fullName").value.trim();
+        if (!fullName) {
+          setInvalid("fullName");
+          ok = false;
+        }
+
+        var wa = digitsOnly(document.getElementById("whatsapp").value);
+        if (!validPkWhatsApp(wa)) {
+          setInvalid("whatsapp");
+          ok = false;
+        }
+
+        if (!document.getElementById("city").value.trim()) {
+          setInvalid("city");
+          ok = false;
+        }
+
+        var email = document.getElementById("email").value.trim();
+        if (email) {
+          var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+          if (!emailOk) {
+            setInvalid("email");
+            ok = false;
+          }
+        }
+
+        if (!document.getElementById("profile").value) {
+          setInvalid("profile");
+          ok = false;
+        }
+        if (!document.getElementById("hours").value) {
+          setInvalid("hours");
+          ok = false;
+        }
+        if (!document.getElementById("consent").checked) {
+          setInvalid("consent");
+          ok = false;
+        }
+        return ok;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+
+        if (!endpoint) {
+          formError.textContent =
+            "Formspree id set nahi hai. config.js mein YOUR_FORMSPREE_ID ko apne form id se badlein, phir page dubara load karein.";
+          formError.hidden = false;
+          formError.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          return;
+        }
+
+        formError.hidden = true;
+        var btnLabel = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Bhej rahe hain…";
+
+        var fd = new FormData(form);
+        fd.set("submittedAt", new Date().toISOString());
+
+        fetch(endpoint, {
+          method: "POST",
+          body: fd,
+          headers: { Accept: "application/json" }
+        })
+          .then(function (res) {
+            return res.text().then(function (text) {
+              var data = null;
+              try {
+                data = text ? JSON.parse(text) : null;
+              } catch (ignore) {
+                data = null;
+              }
+              if (!res.ok) {
+                var msg =
+                  (data && (data.error || (data.errors && data.errors[0] && data.errors[0].message))) ||
+                  "Request fail ho gaya.";
+                throw new Error(msg);
+              }
+              return data || {};
+            });
+          })
+          .then(function () {
+            formBlock.classList.add("hidden");
+            success.classList.add("visible");
+            success.focus({ preventScroll: false });
+          })
+          .catch(function () {
+            formError.textContent =
+              "Abhi submit nahi ho saka. Internet check karke dubara try karein.";
+            formError.hidden = false;
+            submitBtn.disabled = false;
+            submitBtn.textContent = btnLabel;
+            formError.scrollIntoView({ block: "nearest", behavior: "smooth" });
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
