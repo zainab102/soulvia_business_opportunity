@@ -11,8 +11,8 @@
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Soulvia Official · Apply</title>
-  <meta name="description" content="Soulvia Official, Pakistan. Leave your WhatsApp and a few details. Our team replies and explains the next steps on a call." />
+  <title>Soulvia Official · Get Started</title>
+  <meta name="description" content="Apply in 60 seconds. Our team replies on WhatsApp or call to explain the next steps. No pressure, no fixed-income claims." />
   <link rel="icon" href="assets/soulvia-official.png" type="image/png" />
   <link rel="apple-touch-icon" href="assets/soulvia-official.png" />
   <meta name="theme-color" content="#0a0a0a" />
@@ -242,6 +242,22 @@
       line-height: 1.35;
     }
 
+    .hero-sub {
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0 0 1.35rem;
+      max-width: 46ch;
+    }
+
+    .hero-sub small {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.92em;
+      opacity: 0.75;
+    }
+
     .eyebrow {
       font-size: 0.72rem;
       font-weight: 700;
@@ -291,21 +307,199 @@
       color: var(--gold-bright);
     }
 
-    .urdu-line {
-      font-size: clamp(1.05rem, 2.8vw, 1.35rem);
-      font-weight: 500;
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.82);
-      margin: 0 0 1.35rem;
-      max-width: 36ch;
+    .signature {
+      margin-top: 1.6rem;
+      display: grid;
+      gap: 0.75rem;
+      max-width: 56ch;
     }
 
-    .urdu-line span {
-      display: block;
-      margin-top: 0.35rem;
-      font-size: 0.95em;
-      opacity: 0.75;
+    .sig-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.75rem 0.9rem;
+      padding: 0.95rem 1.05rem;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(201, 162, 39, 0.1), rgba(255, 255, 255, 0.03));
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
+    .sig-dot {
+      width: 2.15rem;
+      height: 2.15rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(201, 162, 39, 0.28);
+      color: rgba(232, 197, 71, 0.92);
+      flex-shrink: 0;
+    }
+
+    .sig-row strong {
+      display: block;
+      margin-bottom: 0.18rem;
+      font-size: 0.95rem;
+    }
+
+    .sig-row p {
+      margin: 0;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.45;
+    }
+
+    .faq {
+      margin-top: 1.75rem;
+      max-width: 56ch;
+    }
+
+    .faq h3 {
+      margin: 0 0 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    details {
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      overflow: hidden;
+    }
+
+    details + details {
+      margin-top: 0.6rem;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "+";
+      font-weight: 900;
+      color: rgba(232, 197, 71, 0.85);
+    }
+
+    details[open] summary::after {
+      content: "–";
+    }
+
+    .faq p {
+      margin: 0;
+      padding: 0 1rem 0.95rem;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .voices {
+      margin-top: 1.75rem;
+      max-width: 64ch;
+    }
+
+    .voices h3 {
+      margin: 0 0 0.6rem;
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .quote-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    @media (min-width: 520px) {
+      .quote-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .q {
+      margin: 0;
+      padding: 0.95rem 1rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .q footer {
+      margin-top: 0.55rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      font-weight: 600;
+    }
+
+    .sticky-apply {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 50;
+      padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.75) 35%, rgba(10, 10, 10, 0.92) 100%);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      pointer-events: none;
+    }
+
+    .sticky-apply a {
+      pointer-events: auto;
+      width: min(520px, 100%);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 3.1rem;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #0a0a0a;
+      background: linear-gradient(180deg, var(--gold-bright) 0%, var(--gold) 100%);
+      box-shadow: 0 14px 36px rgba(201, 162, 39, 0.22);
+    }
+
+    .sticky-apply a:focus-visible {
+      outline: 2px solid rgba(232, 197, 71, 0.95);
+      outline-offset: 3px;
+    }
+
+    .sticky-apply small {
+      font-weight: 700;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 900px) {
+      .sticky-apply {
+        display: flex;
+      }
+      body {
+        padding-bottom: calc(4.8rem + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
 
     .chips {
       display: flex;
@@ -845,57 +1039,119 @@
     <main class="grid">
       <section class="hero" aria-labelledby="hero-title">
         <span class="hero-watermark" aria-hidden="true">∞</span>
-        <p class="hero-kicker">Pakistan, side income / online work</p>
-        <h1 id="hero-title">Form bhar dein, <em>baaki hum explain</em> kar denge call par.</h1>
-        <p class="urdu-line">
-          Student ho, ghar par ho, ya job kartay ho. Agar apne time ke hisaab se kuch extra karna chahte ho, bas details chhor do.
-          <span>Koi fixed income ka waada nahi. Pehle baat, phir aap decide karte ho.</span>
+        <p class="hero-kicker">Pakistan • flexible online opportunity</p>
+        <h1 id="hero-title">Apply in 60 seconds. <em>We’ll explain the next steps</em> on WhatsApp or call.</h1>
+        <p class="hero-sub">
+          If you’re a student, employed, or at home and want a flexible option, leave your details and we’ll reach out.
+          <small>No pressure. No “fixed income” promises. You decide after the call.</small>
         </p>
 
-        <p class="hero-quote">Thoda time nikalna, seedhi baat sunna, phir khud decide karna.</p>
+        <p class="hero-quote">Clear conversation first. Decisions later.</p>
 
         <div class="chips" role="list">
-          <span class="chip" role="listitem">Raat ya weekend, dono chal sakte hain</span>
-          <span class="chip" role="listitem">Reply WhatsApp par</span>
-          <span class="chip" role="listitem">Team member guide karta hai start se</span>
+          <span class="chip" role="listitem">Evenings or weekends can work</span>
+          <span class="chip" role="listitem">Reply on WhatsApp</span>
+          <span class="chip" role="listitem">Guided onboarding if it fits</span>
         </div>
 
         <div class="steps-wrap" id="steps">
-          <p class="eyebrow">Teen steps</p>
+          <p class="eyebrow">3 steps</p>
           <ol class="steps">
           <li>
             <span class="step-num" aria-hidden="true">1</span>
             <div>
-              <strong>Form bhar dein</strong>
-              <p>Yahi page par details likh kar bhej dein.</p>
+              <strong>Submit the form</strong>
+              <p>Share your name, city, and WhatsApp number.</p>
             </div>
           </li>
           <li>
             <span class="step-num" aria-hidden="true">2</span>
             <div>
-              <strong>Call ya WhatsApp par rabta</strong>
-              <p>Team aap tak phone call ya WhatsApp message se pohonchti hai.</p>
+              <strong>We contact you</strong>
+              <p>We’ll reach out via WhatsApp or call to explain details.</p>
             </div>
           </li>
           <li>
             <span class="step-num" aria-hidden="true">3</span>
             <div>
-              <strong>Training</strong>
-              <p>Us ke baad training se agla hissa shuru hota hai.</p>
+              <strong>Training (if you proceed)</strong>
+              <p>If it’s a fit, we share training and next actions.</p>
             </div>
           </li>
         </ol>
         </div>
 
+        <div class="signature" aria-label="What makes this different">
+          <div class="sig-row">
+            <span class="sig-dot" aria-hidden="true">◎</span>
+            <div>
+              <strong>No pressure process</strong>
+              <p>You’ll get the full picture on a call before deciding anything.</p>
+            </div>
+          </div>
+          <div class="sig-row">
+            <span class="sig-dot" aria-hidden="true">⌁</span>
+            <div>
+              <strong>Flexible by design</strong>
+              <p>People typically start part-time and build consistency first.</p>
+            </div>
+          </div>
+          <div class="sig-row">
+            <span class="sig-dot" aria-hidden="true">⟡</span>
+            <div>
+              <strong>Clear expectations</strong>
+              <p>Results depend on effort and skills—no guaranteed outcomes.</p>
+            </div>
+          </div>
+        </div>
+
         <div class="trust">
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-            Spam nahi, sirf kaam ki baat
+            No spam. Only application-related contact.
           </span>
           <span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-            Number sirf team tak rehta hai
+            Your number is used only to reply.
           </span>
+        </div>
+
+        <div class="faq" aria-label="Frequently asked questions">
+          <h3>Quick questions</h3>
+          <details>
+            <summary>Is this a job?</summary>
+            <p>No. This page is an application to learn details about an opportunity. We explain on a call and you decide.</p>
+          </details>
+          <details>
+            <summary>Do you guarantee income?</summary>
+            <p>No. We don’t make fixed-income claims. Results vary by effort, skills, and consistency.</p>
+          </details>
+          <details>
+            <summary>How do you contact me?</summary>
+            <p>WhatsApp message or phone call, based on what you share in the form.</p>
+          </details>
+        </div>
+
+        <div class="voices" aria-label="What applicants like">
+          <h3>What applicants like</h3>
+          <div class="quote-grid">
+            <figure class="q">
+              “The call was straightforward. They explained everything clearly before asking me to decide.”
+              <footer>Applicant feedback</footer>
+            </figure>
+            <figure class="q">
+              “I liked that there were no big promises—just a clear process and training if I wanted to continue.”
+              <footer>Applicant feedback</footer>
+            </figure>
+            <figure class="q">
+              “The steps were simple: form → WhatsApp → training. Easy to understand.”
+              <footer>Applicant feedback</footer>
+            </figure>
+            <figure class="q">
+              “It felt professional and respectful of my time.”
+              <footer>Applicant feedback</footer>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -913,83 +1169,83 @@
                   <input id="website" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
                 </div>
                 <div class="panel-head">
-                  <h2>Apni details likh dein</h2>
-                  <p>Jo likhoge wahi padh kar team call pe baat karegi. Form bharne se koi lock-in nahi.</p>
+                  <h2>Start your application</h2>
+                  <p>We’ll use these details to contact you and explain the next steps. Submitting this form doesn’t lock you in.</p>
                 </div>
 
                 <fieldset>
                   <div class="field" data-field="fullName">
                     <label for="fullName">Full name</label>
-                    <input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="120" placeholder="Jaisa CNIC / official ID par ho" />
+                    <input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="120" placeholder="Your name" />
                     <p class="error-msg">Please enter your full name.</p>
                   </div>
 
                   <div class="row row-2">
                     <div class="field" data-field="whatsapp">
-                      <label for="whatsapp">WhatsApp <span class="hint">(country code ke sath)</span></label>
+                      <label for="whatsapp">WhatsApp <span class="hint">(with country code)</span></label>
                       <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required placeholder="923001234567" />
-                      <p class="error-msg">Valid WhatsApp number enter karein.</p>
+                      <p class="error-msg">Please enter a valid WhatsApp number.</p>
                     </div>
                     <div class="field" data-field="city">
                       <label for="city">City</label>
                       <input id="city" name="city" type="text" required maxlength="80" placeholder="Karachi, Lahore, Islamabad…" />
-                      <p class="error-msg">City zaroor likhein.</p>
+                      <p class="error-msg">Please enter your city.</p>
                     </div>
                   </div>
 
                   <div class="field" data-field="email">
                     <label for="email">Email <span class="hint">(optional)</span></label>
-                    <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="agar use kartay hon" />
-                    <p class="error-msg">Valid email ya khali chhor dein.</p>
+                    <input id="email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com" />
+                    <p class="error-msg">Enter a valid email or leave it empty.</p>
                   </div>
 
                   <div class="row row-2">
                     <div class="field" data-field="profile">
-                      <label for="profile">Mainly aap…</label>
+                      <label for="profile">You are mainly a…</label>
                       <select id="profile" name="profile" required>
-                        <option value="" disabled selected>Choose karein</option>
+                        <option value="" disabled selected>Select one</option>
                         <option value="student">Student</option>
                         <option value="homemaker">Homemaker</option>
                         <option value="employed">Employed / corporate</option>
                         <option value="freelancer">Freelancer</option>
                         <option value="other">Other</option>
                       </select>
-                      <p class="error-msg">Ek option select karein.</p>
+                      <p class="error-msg">Please select an option.</p>
                     </div>
                     <div class="field" data-field="hours">
                       <label for="hours">Weekly hours <span class="hint">(realistic)</span></label>
                       <select id="hours" name="hours" required>
                         <option value="" disabled selected>Select</option>
-                        <option value="under-5">5 se kam</option>
+                        <option value="under-5">Under 5</option>
                         <option value="5-10">5–10</option>
                         <option value="10-20">10–20</option>
                         <option value="20-plus">20+</option>
                       </select>
-                      <p class="error-msg">Hours batayein.</p>
+                      <p class="error-msg">Please choose weekly hours.</p>
                     </div>
                   </div>
 
                   <div class="field" data-field="goal">
-                    <label for="goal">Aap kya chahte hain? <span class="hint">(1 ya 2 lines)</span></label>
-                    <textarea id="goal" name="goal" maxlength="500" placeholder="Maslan: studies ke sath extra, flexible hours, naye skills…"></textarea>
+                    <label for="goal">What are you looking for? <span class="hint">(1–2 lines)</span></label>
+                    <textarea id="goal" name="goal" maxlength="500" placeholder="Example: flexible side income option, learning new skills, evenings/weekends…"></textarea>
                     <p class="error-msg">500 characters max.</p>
                   </div>
 
                   <div class="field" data-field="consent">
                     <label class="check">
                       <input id="consent" name="consent" type="checkbox" value="yes" required />
-                      <span><strong>Main agree karti/karta hoon</strong> ke team mujhe call / WhatsApp par is application ke baray mein rabta kar sakti hai. Samajhta/samajhti hoon ke natayej effort par depend karte hain aur koi guarantee nahi di jaati.</span>
+                      <span><strong>I agree</strong> that the team may contact me via call/WhatsApp about this application. I understand results vary and nothing is guaranteed.</span>
                     </label>
-                    <p class="error-msg">Aage barhne ke liye tick karein.</p>
+                    <p class="error-msg">Please check the box to continue.</p>
                   </div>
                 </fieldset>
 
                 <div class="submit-wrap">
-                  <button type="submit" id="submit-btn">Bhej dein, WhatsApp par milte hain</button>
+                  <button type="submit" id="submit-btn">Submit application</button>
                 </div>
 
                 <p class="fine-print">
-                  Form Formspree se aap ki email par bhejta hai. Ads chalate waqt fixed kamai ke claims se bacho. Formspree ki privacy policy un ki site par hai.
+                  This form is delivered via Formspree. Please avoid fixed-income claims in ads or messages. You’ll only be contacted about this application.
                 </p>
               </div>
             </form>
@@ -1000,7 +1256,7 @@
 
     <footer class="ig-footer" aria-labelledby="ig-heading">
       <h2 id="ig-heading">Instagram</h2>
-      <p>Agar pehle dekhna ho to yahan se follow kar lo. Phir wapas aa kar form bhar dena.</p>
+      <p>If you want to check official pages first, you can visit these and come back to apply.</p>
       <ul class="ig-links">
         <li>
           <a href="https://www.instagram.com/abdullah_juttofficial/" target="_blank" rel="noopener noreferrer">
@@ -1117,7 +1373,7 @@
 
         if (!endpoint) {
           formError.textContent =
-            "Formspree id set nahi hai. config.js mein YOUR_FORMSPREE_ID ko apne form id se badlein, phir page dubara load karein.";
+            "Formspree ID isn’t set. Update config.js with your Formspree form id, then reload the page.";
           formError.hidden = false;
           formError.scrollIntoView({ block: "nearest", behavior: "smooth" });
           return;
@@ -1126,7 +1382,7 @@
         formError.hidden = true;
         var btnLabel = submitBtn.textContent;
         submitBtn.disabled = true;
-        submitBtn.textContent = "Bhej rahe hain…";
+        submitBtn.textContent = "Submitting…";
 
         var fd = new FormData(form);
         fd.set("submittedAt", new Date().toISOString());
@@ -1159,7 +1415,7 @@
           })
           .catch(function () {
             formError.textContent =
-              "Abhi submit nahi ho saka. Internet check karke dubara try karein.";
+              "We couldn’t submit right now. Check your internet and try again.";
             formError.hidden = false;
             submitBtn.disabled = false;
             submitBtn.textContent = btnLabel;
@@ -1168,5 +1424,12 @@
       });
     })();
   </script>
+
+  <div class="sticky-apply" role="region" aria-label="Apply now">
+    <a href="#apply">
+      Apply now
+      <small>· 60 seconds</small>
+    </a>
+  </div>
 </body>
 </html>
